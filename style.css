@@ -87,6 +87,57 @@ main {
   width: 100%;
   flex-direction: column;
 }
+html {
+  overflow-x: hidden;
+}
+/* Header With Navigation Bar */
+header {
+  z-index: 99;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  /* Nav Bar */
+  #main-nav {
+    transition: all 250ms ease-in-out;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    color: var(--primary-color);
+    #nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0 50px;
+      height: inherit;
+      font-family: var(--normal-font);
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
+      #nav-item:not(:first-child) {
+        padding: 10px 20px;
+        position: relative;
+      }
+      #nav-item:not(:first-child)::before {
+        content: "";
+        width: 0;
+        height: 5px;
+        background: var(--accent-color);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: all 350ms ease-in-out;
+      }
+      #nav-item:not(:first-child):hover::before {
+        width: 100%;
+      }
+      #nav-item:first-child {
+        margin: 0 50px;
+      }
+    }
+  }
+}
 #home {
   display: flex;
   align-items: center;
@@ -208,49 +259,6 @@ main {
     width: 175px !important;
     height: auto !important;
     padding: 10px 0px;
-  }
-}
-/* Nav Bar */
-#main-nav {
-  z-index: 99;
-  transition: all 250ms ease-in-out;
-  position: fixed;
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  background: transparent;
-  color: var(--primary-color);
-  #nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 0 50px;
-    height: inherit;
-    font-family: var(--normal-font);
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 700;
-    #nav-item:not(:first-child) {
-      padding: 10px 20px;
-      position: relative;
-    }
-    #nav-item:not(:first-child)::before {
-      content: "";
-      width: 0;
-      height: 5px;
-      background: var(--accent-color);
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      transition: all 350ms ease-in-out;
-    }
-    #nav-item:not(:first-child):hover::before {
-      width: 100%;
-    }
-    #nav-item:first-child {
-      margin: 0 50px;
-    }
   }
 }
 /* About Us Styling */
@@ -417,17 +425,58 @@ main {
 @media (max-width: 600px) {
   #home {
     > h1 {
-      font-size: 2.5rem;
+      font-size: 1.3rem;
     }
     > h2 {
       line-height: 4rem;
-      font-size: 1.75rem;
+      font-size: 1.1rem;
     }
     > p {
       padding: 0 5rem;
       line-height: 100%;
       text-align: center;
-      font-size: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+  .about-us-container {
+    grid-template-columns: 1rem 1fr 1rem;
+    .text-side {
+      height: 300px;
+      & p {
+        font-size: 0.55rem;
+      }
+      & h1 {
+        font-size: 1.75rem;
+      }
+      & h2 {
+        font-size: 1rem;
+      }
+    }
+    .images-side {
+      grid-column: 2 / 4;
+      height: 300px;
+      & img {
+        height: 300px;
+      }
+      & div::after {
+        width: 100px;
+        height: 100px;
+        border: 5px solid var(--primary-color);
+        left: calc(100% - 100px);
+      }
+    }
+  }
+  /* Main Nav Bar */
+  #main-nav {
+    max-width: 100% !important;
+    #nav-bar {
+      max-width: 100% !important;
+      #nav-item:not(:first-child) {
+        display: none;
+      }
+      #nav-item:first-child {
+        width: 100px;
+      }
     }
   }
 }
