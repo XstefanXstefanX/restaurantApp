@@ -422,7 +422,7 @@ header {
 }
 
 /* Responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   #home {
     > h1 {
       font-size: 1.3rem;
