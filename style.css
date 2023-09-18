@@ -333,7 +333,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: var(--padding-main);
+    padding: 1rem 10%;
     > h1 {
       z-index: 3;
       text-shadow: 0px 0px 5px black;
@@ -342,8 +342,7 @@ header {
       font-family: var(--cursive-font);
     }
     > p {
-      width: 900px;
-      padding: 1rem 0;
+      padding: 1rem;
       z-index: 3;
       color: white;
       text-align: center;
@@ -422,39 +421,46 @@ header {
 }
 
 /* Responsiveness */
-@media (max-width: 800px) {
+@media (max-width: 35em) {
   #home {
     > h1 {
-      font-size: 1.3rem;
+      font-size: 2.5rem;
+      height: 100px;
+      > span {
+        padding: 2rem;
+        display: block;
+      }
     }
     > h2 {
       line-height: 4rem;
-      font-size: 1.1rem;
+      font-size: 1.5rem;
     }
     > p {
-      padding: 0 5rem;
-      line-height: 100%;
+      line-height: 1.5rem;
+      padding: 0 1rem;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 1.25rem;
     }
   }
   .about-us-container {
     grid-template-columns: 1rem 1fr 1rem;
     .text-side {
-      height: 300px;
+      padding-top: 2rem;
+      justify-content: flex-start;
+      height: 550px;
       & p {
-        font-size: 0.55rem;
+        font-size: 1rem;
       }
       & h1 {
-        font-size: 1.75rem;
+        font-size: 2rem;
       }
       & h2 {
-        font-size: 1rem;
+        font-size: 1.25rem;
       }
     }
     .images-side {
-      grid-column: 2 / 4;
-      height: 300px;
+      grid-column: 1 / 4;
+      height: 400px;
       & img {
         height: 300px;
       }
@@ -466,7 +472,7 @@ header {
       }
     }
   }
-  /* Main Nav Bar */
+  /* Main Nav Bar Mobile Mode */
   #main-nav {
     max-width: 100% !important;
     #nav-bar {
@@ -478,5 +484,31 @@ header {
         width: 100px;
       }
     }
+  }
+  /* Today's Special Dish Mobile Mode */
+  .carousel {
+    > div:nth-child(2) {
+      display: none;
+    }
+    > div {
+      box-shadow: 0px 0px 5px 5px white;
+      animation: glow infinite cubic-bezier(0.175, 0.885, 0.32, 1.275) 1500ms;
+    }
+    > div:hover {
+      animation-play-state: paused;
+      box-shadow: none !important;
+    }
+    > div:last-child {
+      display: none;
+    }
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0px 0px 5px 5px white;
+  }
+  to {
+    box-shadow: 0px 0px 5px 5px transparent;
   }
 }
