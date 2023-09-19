@@ -3,8 +3,6 @@ let navbar = document.getElementById("main-nav");
 window.onscroll = function () {
   if (window.pageYOffset > 50) {
     navbar.classList.add("scrolled");
-
-    console.log("working");
   } else {
     navbar.classList.remove("scrolled");
   }
@@ -56,3 +54,18 @@ setInterval(() => {
     word.style.setProperty("--changing-text-color", "white");
   }
 }, 400);
+
+// Our Menu Selector
+
+const menuButtons = document.querySelectorAll(".menu-nav-item");
+menuButtons.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    menuButtons.forEach((item) => {
+      console.log(item.getAttribute("data-active"));
+      if (item.getAttribute("data-active") == "true") {
+        item.setAttribute("data-active", "false");
+      }
+    });
+    item.setAttribute("data-active", "true");
+  });
+});

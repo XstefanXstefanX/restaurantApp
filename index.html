@@ -114,27 +114,62 @@
           </div>
         </div>
       </div>
+      <!-- Menu -->
       <div id="menu">
-        <h1></h1>
-        <p></p>
+        <h1 class="header">Our Menu</h1>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected
+          humour, or randomised words which don't look even slightly believable.
+        </p>
         <div class="menu-container">
           <!-- Our Menu Navigation -->
-          <nav>
-            <ul>
-              <li><a href="#menu-starters">Starters</a></li>
-              <li><a href="#menu-main-dishes">Main Dishes</a></li>
-              <li><a href="#menu-deserts">Deserts</a></li>
-              <li><a href="#menu-drinks">Drinks</a></li>
+          <nav class="menu-nav">
+            <ul class="menu-nav-list">
+              <li>
+                <a
+                  href="#menu-starters"
+                  class="menu-nav-item"
+                  data-active="true"
+                  >Starters
+                  <hr />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#menu-main-dishes"
+                  class="menu-nav-item"
+                  data-active="false"
+                  >Main Dishes
+                  <hr />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#menu-deserts"
+                  class="menu-nav-item"
+                  data-active="false"
+                  >Deserts
+                  <hr />
+                </a>
+              </li>
+              <li>
+                <a href="#menu-drinks" class="menu-nav-item" data-active="false"
+                  >Drinks
+                  <hr />
+                </a>
+              </li>
             </ul>
           </nav>
-          <!-- Our Items -->
-          <!-- Menu Starters -->
-          <div id="menu-starters">
+          <!-- Menu Items -->
+          <div id="menu-starters" data-active="true">
             <!-- Menu Item #1 -->
             <div class="menu-item">
-              <div class="menu-item-image"></div>
+              <div class="menu-item-image">
+                <img src="images/menu-item-thumbnail-01.jpg" alt="menu-img" />
+              </div>
               <div class="menu-item-description">
-                <h1>Garlic Bread</h1>
+                <h1 class="header">Garlic Bread</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -144,9 +179,11 @@
             </div>
             <!-- Menu Item #2 -->
             <div class="menu-item">
-              <div class="menu-item-image"></div>
+              <div class="menu-item-image">
+                <img src="images/menu-item-thumbnail-02.jpg" alt="menu-img" />
+              </div>
               <div class="menu-item-description">
-                <h1>Mixed Salad</h1>
+                <h1 class="header">Mixed Salad</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -156,9 +193,11 @@
             </div>
             <!-- Menu Item #3 -->
             <div class="menu-item">
-              <div class="menu-item-image"></div>
+              <div class="menu-item-image">
+                <img src="images/menu-item-thumbnail-03.jpg" alt="menu-img" />
+              </div>
               <div class="menu-item-description">
-                <h1>BBQ Chicken Wings</h1>
+                <h1 class="header">BBQ Chicken Wings</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -168,7 +207,7 @@
             </div>
           </div>
           <!-- Menu Main Dishes -->
-          <div id="menu-main-dishes">
+          <div id="menu-main-dishes" data-active="false">
             <!-- Menu Item #1 -->
             <div class="menu-item">
               <div class="menu-item-image"></div>
@@ -207,7 +246,7 @@
             </div>
           </div>
           <!-- Menu Deserts -->
-          <div id="menu-deserts">
+          <div id="menu-deserts" data-active="false">
             <!-- Menu Item #1 -->
             <div class="menu-item">
               <div class="menu-item-image"></div>
@@ -246,7 +285,7 @@
             </div>
           </div>
           <!-- Menu Drinks -->
-          <div id="menu-drinks">
+          <div id="menu-drinks" data-active="false">
             <!-- Menu Item #1 -->
             <div class="menu-item">
               <div class="menu-item-image"></div>
