@@ -322,6 +322,9 @@ header {
     filter: opacity(0.5);
     position: absolute;
   }
+  .special-dish:hover {
+    cursor: pointer;
+  }
   .special-dish {
     position: relative;
     grid-column: 1 / 5;
@@ -435,7 +438,12 @@ header {
 }
 
 .menu-container {
+  position: relative;
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
   > div {
+    margin-top: 200px;
     border: 1px solid red;
     width: 100%;
     display: grid;
@@ -443,6 +451,9 @@ header {
     text-align: left;
     gap: 10px;
     padding: 1rem;
+  }
+  > div[data-active="false"] {
+    display: none;
   }
 }
 /* Menu Items */
@@ -467,6 +478,7 @@ header {
 }
 /* Menu Nav */
 .menu-nav {
+  position: absolute;
   width: 100%;
   color: black;
 }

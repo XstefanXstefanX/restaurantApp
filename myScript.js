@@ -58,6 +58,8 @@ setInterval(() => {
 // Our Menu Selector
 
 const menuButtons = document.querySelectorAll(".menu-nav-item");
+const menuSlides = document.querySelectorAll(".menu-details");
+
 menuButtons.forEach((item) => {
   item.addEventListener("click", (e) => {
     menuButtons.forEach((item) => {
