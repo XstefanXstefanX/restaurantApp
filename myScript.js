@@ -20,6 +20,7 @@ const words = [
 ];
 
 // Word Delete /  Type Effect Handler
+
 setInterval(() => {
   let i = 0;
   let currWord = words[Math.floor(Math.random() * words.length)].split("");
@@ -60,14 +61,27 @@ setInterval(() => {
 const menuButtons = document.querySelectorAll(".menu-nav-item");
 const menuSlides = document.querySelectorAll(".menu-details");
 
-menuButtons.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    menuButtons.forEach((item) => {
-      console.log(item.getAttribute("data-active"));
+menuButtons.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    menuButtons.forEach((item, index) => {
       if (item.getAttribute("data-active") == "true") {
         item.setAttribute("data-active", "false");
+        menuButtons[index].setAttribute("data-active", "false");
       }
     });
     item.setAttribute("data-active", "true");
+  });
+});
+
+menuButtons.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    console.log(index);
+    menuButtons.forEach((item, index) => {
+      menuSlides[index].setAttribute("data-active", "false");
+    });
+    console.log(menuSlides[index].getAttribute("data-active"));
+    if (menuSlides[index].getAttribute("data-active") == "false") {
+      menuSlides[index].setAttribute("data-active", "true");
+    }
   });
 });
