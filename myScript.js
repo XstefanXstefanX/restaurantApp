@@ -85,3 +85,15 @@ menuButtons.forEach((item, index) => {
     }
   });
 });
+
+// Tablet Mode NavBar Show/Hide
+
+document
+  .querySelector(".nav-hamburger-button")
+  .addEventListener("click", () => {
+    document.querySelectorAll("#nav-item").forEach((item) => {
+      console.log(item.style.display);
+      item.style.display == "none" ? "block" : "none";
+      console.log(item.style.display);
+    });
+  });
